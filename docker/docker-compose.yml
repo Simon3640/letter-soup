@@ -1,0 +1,85 @@
+services:
+  lettersoup-staging:
+    build:
+      context: ..
+      dockerfile: docker/dockerfile
+    ports:
+      - "8080:8080"
+    env_file:
+      - ../.env
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    security_opt:
+      - seccomp:unconfined
+    networks:
+      - lettersoup-staging
+    command: ["./main"]
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    expose:
+      - 5432
+    ports:
+      - "5436:5432"
+    environment:
+      POSTGRES_USER: lettersoup
+      POSTGRES_PASSWORD: lettersoup
+    volumes:
+      - lettersoup-staging-db-data:/var/lib/postgresql/data
+    networks:
+      - lettersoup-staging
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lettersoup"]
+      interval: 1s
+      retries: 5
+
+  mailhog:
+    image: axllent/mailpit:latest
+    # platform: linux/amd64
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+    restart: always
+    networks:
+      - lettersoup-staging
+
+  redis:
+    image: redis:7.0-alpine
+    command: ["redis-server", "--requirepass", "secretPassword"]
+    ports:
+      - "6379:6379"
+    networks:
+      - lettersoup-staging
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    ports:
+      - "8081:8081"
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+      - REDIS_HOSTS=redis
+      - REDIS_HOST=redis
+      - REDIS_PORT=redis:6379
+      - REDIS_PASSWORD=secretPassword
+    networks:
+      - lettersoup-staging
+
+networks:
+  lettersoup-staging:
+    external: true
+
+volumes:
+  lettersoup-staging-db-data:
+    external: true

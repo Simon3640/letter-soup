@@ -1,0 +1,30 @@
+FROM golang:1.25-alpine AS builder
+
+RUN apk add --no-cache git build-base
+
+
+WORKDIR /app
+
+COPY go.mod go.sum ./
+RUN go mod download
+
+COPY ./src ./src
+COPY .env ./
+
+RUN go install github.com/swaggo/swag/cmd/swag@latest
+RUN swag init -g ./src/infrastructure/api/cmd/main.go -o /app/docs
+RUN go build -o main ./src/infrastructure/api/cmd/main.go
+
+FROM alpine:latest
+
+RUN addgroup -S appuser && adduser -S -G appuser appuser
+
+WORKDIR /app
+
+COPY --from=builder /app/main .
+COPY --from=builder /app/docs ./docs
+
+RUN chown -R appuser:appuser /app
+USER appuser
+
+EXPOSE 8080
