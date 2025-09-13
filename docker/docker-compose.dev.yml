@@ -1,0 +1,76 @@
+services:
+  gormgoskeleton:
+    build:
+      context: ..
+      dockerfile: docker/dockerfile.dev
+    ports:
+      - "8080:8080"
+      - "40000:40000" #dlv
+    env_file:
+      - ../dev.env
+    depends_on:
+      - db
+    security_opt:
+      - seccomp:unconfined
+    volumes:
+      - ../src:/app/src
+      - ../dev.env:/app/.env:ro
+      - ../.air.toml:/app/.air.toml
+    networks:
+      - gormgoskeleton
+    command: ["air", "-c", ".air.toml"]
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    expose:
+      - 5432
+    ports:
+      - "5436:5432"
+    environment:
+      POSTGRES_USER: gormgoskeleton
+      POSTGRES_PASSWORD: gormgoskeleton
+    volumes:
+      - gormgoskeleton-db-data:/var/lib/postgresql/data
+    networks:
+      - gormgoskeleton
+
+  mailhog:
+    image: axllent/mailpit:latest
+    # platform: linux/amd64
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+    restart: always
+    networks:
+      - gormgoskeleton
+
+  redis:
+    image: redis:7.0-alpine
+    command: ["redis-server", "--requirepass", "secretPassword"]
+    ports:
+      - "6379:6379"
+    networks:
+      - gormgoskeleton
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    ports:
+      - "8081:8081"
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOSTS=redis
+      - REDIS_HOST=redis
+      - REDIS_PORT=redis:6379
+      - REDIS_PASSWORD=secretPassword
+    networks:
+      - gormgoskeleton
+
+networks:
+  gormgoskeleton:
+    external: true
+
+volumes:
+  gormgoskeleton-db-data:
+    external: true
