@@ -1,0 +1,55 @@
+services:
+  # gormgoskeleton:
+  #   build:
+  #     context: ..
+  #     dockerfile: docker/dockerfile.dev
+  #   ports:
+  #     - "8080:8080"
+  #     - "40000:40000" #dlv
+  #   environment:
+  #     - APP_NAME = gormgoskeleton
+  #     - APP_ENV = dev
+  #     - APP_PORT = 8080
+  #     - DB_HOST = db
+  #     - APP_VERSION = 0.0.0
+  #     - APP_DESCRIPTION = "Gorm Go Skeleton Template"
+  #     - DB_HOST = db
+  #     - DB_PORT = 5432
+  #     - DB_USER = gormgoskeleton
+  #     - DB_PASSWORD = gormgoskeleton
+  #     - DB_NAME = gormgoskeleton
+  #   # depends_on:
+  #   #   - db
+  #   security_opt:
+  #     - seccomp:unconfined
+  #   volumes:
+  #     - ../:/app
+  #   networks:
+  #     - gormgoskeleton
+  #   # command: sleep 3600
+  #   command: [ "dlv", "--listen=:40000", "--headless=true", "--api-version=2", "--accept-multiclient", "exec", "/src/main" ]
+
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    expose:
+      - 5432
+    ports:
+      - "5436:5432"
+    environment:
+      POSTGRES_USER: gormgoskeleton
+      POSTGRES_PASSWORD: gormgoskeleton
+    volumes:
+      - gormgoskeleton-db-data:/var/lib/postgresql/data
+    # networks:
+    #   - gormgoskeleton
+
+
+# networks:
+#   gormgoskeleton:
+#     external: true
+
+volumes:
+  gormgoskeleton-db-data:
+    external: true
