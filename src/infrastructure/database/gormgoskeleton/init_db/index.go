@@ -33,4 +33,8 @@ func InitMigrate(db *gorm.DB, logger contractsProviders.ILoggerProvider) {
 	logger.Info("Auto migrating OneTimePassword model")
 	setups.NewSetupOneTimePassword().Setup(db, dbModels.OneTimePassword{}, nil, logger)
 	logger.Info("OneTimePassword model migrated")
+
+	logger.Info("Auto migrating LetterSoup model")
+	setups.NewSetupLetterSoup().Setup(db, dbModels.LetterSoup{}, nil, logger)
+	logger.Info("LetterSoup model migrated")
 }
