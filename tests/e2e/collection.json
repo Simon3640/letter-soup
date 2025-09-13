@@ -1037,6 +1037,9 @@
 									"    pm.expect(isValidDate(accessExpiresAt)).to.be.true;",
 									"    pm.expect(isValidDate(refreshExpiresAt)).to.be.true;",
 									"});",
+									"",
+									"pm.environment.set(\"userToken\", pm.response.json().data.access_token);",
+									"pm.environment.set(\"refreshUserToken\", pm.response.json().data.refresh_token);",
 									""
 								],
 								"type": "text/javascript",
@@ -1062,6 +1065,102 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Letter Soup",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.eql(200);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"pm.test(\"Response contains required fields in the data object\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+							"    pm.expect(responseData.data).to.have.all.keys('Rows', 'Columns', 'user_id', 'grid', 'words', 'id', 'created_at', 'updated_at', 'deleted_at', 'founded_words', 'not_founded_words');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Rows and Columns must be non-negative integers\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.data).to.be.an('object').that.includes.all.keys('Rows', 'Columns');",
+							"    ",
+							"    pm.expect(responseData.data.Rows).to.be.a('number').and.to.be.at.least(0);",
+							"    pm.expect(responseData.data.Columns).to.be.a('number').and.to.be.at.least(0);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Grid and Words are non-empty arrays\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.data).to.exist.and.to.be.an('object');",
+							"",
+							"    // Test for grid",
+							"    pm.expect(responseData.data.grid).to.be.an('array').that.is.not.empty;",
+							"    responseData.data.grid.forEach(function(item) {",
+							"        pm.expect(item).to.be.a('string').that.is.not.empty;",
+							"    });",
+							"",
+							"    // Test for words",
+							"    pm.expect(responseData.data.words).to.be.an('array').that.is.not.empty;",
+							"    responseData.data.words.forEach(function(item) {",
+							"        pm.expect(item).to.be.a('string').that.is.not.empty;",
+							"    });",
+							"});",
+							"",
+							"pm.test(\"Founded Words and Not Found Words are no empty arrays\", function () {",
+							"    const responseData = pm.response.json();",
+							"",
+							"    pm.expect(responseData.data.founded_words).to.be.an('array').that.is.not.empty;",
+							"    pm.expect(responseData.data.not_founded_words).to.be.an('array').that.is.not.empty;",
+							"} )",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{userToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"columns\": 14,\n    \"rows\": 14,\n    \"grid\": [\n        \"N,D,E,K,I,C,A,N,G,U,R,O,G,E,S,X,R,Y,K,V,I,I,Q,G,W,Q,O,D,J,A,G,U,A,R,Z,W,B,N,K,O,U,A,M,L,E,L,E,F,A,N,T,E,H,O,G,W,L,O,B,O,N,U,T,R,I,A,O,U,S,U,W,W,O,S,O,G,A,T,O,V,R,T,M,O,H,L,Z,N,C,T,Y,Z,E,O,X,A,U,R,C,E,C,Y,T,I,B,U,R,O,N,S,R,O,C,O,N,E,J,O,Y,U,S,M,R,S,H,T,Y,N,I,F,E,F,P,T,E,Z,O,O,S,F,O,S,S,E,R,P,I,E,N,T,E,F,L,G,P,P,V,D,D,X,U,F,A,L,C,O,N,Y,M,O,N,O,C,U,Q,W,M,A,N,A,T,I,N,N,X,H,E,B,P,M,U,P,E,R,R,O\"\n    ],\n    \"user_id\": {{userId}},\n    \"words\": [\n        \"MANATI\",\n        \"LEON\",\n        \"PERRO\",\n        \"LORO\",\n        \"GATO\",\n        \"TORO\",\n        \"CONEJO\",\n        \"ORUGA\",\n        \"TIBURON\",\n        \"ELEFANTE\",\n        \"ALCON\",\n        \"SERPIENTE\",\n        \"JAGUAR\",\n        \"CANGURO\",\n        \"LOBO\",\n        \"MONO\",\n        \"NUTRIA\",\n        \"NOENCONTRADO\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/letter-soup",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"letter-soup"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
