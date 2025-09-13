@@ -1,14 +1,16 @@
-package models
+package services
 
 import (
 	"testing"
+
+	"gormgoskeleton/src/domain/models"
 
 	"github.com/stretchr/testify/assert"
 )
 
 func TestSolveLetterSoup_BasicDirections(t *testing.T) {
 	assert := assert.New(t)
-	ls := LetterSoupBase{
+	ls := models.LetterSoupBase{
 		Grid: []string{
 			"ABCD",
 			"EFGH",
@@ -18,8 +20,8 @@ func TestSolveLetterSoup_BasicDirections(t *testing.T) {
 		Words: []string{"ABCD", "DCBA", "AEIM", "MIEA", "MJGD"},
 	}
 
-	sol, err := SolveLetterSoup(ls)
-	assert.NoError(err)
+	sol, err := SolveLetterSoupService(ls)
+	assert.Nil(err)
 
 	found := map[string]bool{}
 	for _, fw := range sol.FoundWords {
@@ -34,7 +36,7 @@ func TestSolveLetterSoup_BasicDirections(t *testing.T) {
 
 func TestSolveLetterSoup_Diagonals(t *testing.T) {
 	assert := assert.New(t)
-	ls := LetterSoupBase{
+	ls := models.LetterSoupBase{
 		Grid: []string{
 			"AXXX",
 			"XBXZ",
@@ -44,8 +46,8 @@ func TestSolveLetterSoup_Diagonals(t *testing.T) {
 		Words: []string{"ABCD", "DCBA"},
 	}
 
-	sol, err := SolveLetterSoup(ls)
-	assert.NoError(err)
+	sol, err := SolveLetterSoupService(ls)
+	assert.Nil(err)
 
 	found := map[string]bool{}
 	for _, fw := range sol.FoundWords {
@@ -58,7 +60,7 @@ func TestSolveLetterSoup_Diagonals(t *testing.T) {
 
 func TestSolveLetterSoup_DiagonalReverse(t *testing.T) {
 	assert := assert.New(t)
-	ls := LetterSoupBase{
+	ls := models.LetterSoupBase{
 		Grid: []string{
 			"XXXA",
 			"XXBX",
@@ -68,8 +70,8 @@ func TestSolveLetterSoup_DiagonalReverse(t *testing.T) {
 		Words: []string{"ABCD", "DCBA"},
 	}
 
-	sol, err := SolveLetterSoup(ls)
-	assert.NoError(err)
+	sol, err := SolveLetterSoupService(ls)
+	assert.Nil(err)
 
 	found := map[string]bool{}
 	for _, fw := range sol.FoundWords {
@@ -83,7 +85,7 @@ func TestSolveLetterSoup_DiagonalReverse(t *testing.T) {
 
 func TestSolveLetterSoup_MultipleOccurrences(t *testing.T) {
 	assert := assert.New(t)
-	ls := LetterSoupBase{
+	ls := models.LetterSoupBase{
 		Grid: []string{
 			"TEST",
 			"ESTE",
@@ -93,15 +95,15 @@ func TestSolveLetterSoup_MultipleOccurrences(t *testing.T) {
 		Words: []string{"TEST"},
 	}
 
-	sol, err := SolveLetterSoup(ls)
-	assert.NoError(err)
+	sol, err := SolveLetterSoupService(ls)
+	assert.Nil(err)
 
 	assert.Equal(5, len(sol.FoundWords), "Expected multiple occurrences of word TEST, got %d", len(sol.FoundWords))
 }
 
 func TestSolveLetterSoup_NoWordsFound(t *testing.T) {
 	assert := assert.New(t)
-	ls := LetterSoupBase{
+	ls := models.LetterSoupBase{
 		Grid: []string{
 			"ABCD",
 			"EFGH",
@@ -111,8 +113,8 @@ func TestSolveLetterSoup_NoWordsFound(t *testing.T) {
 		Words: []string{"XYZ", "123"},
 	}
 
-	sol, err := SolveLetterSoup(ls)
-	assert.NoError(err)
+	sol, err := SolveLetterSoupService(ls)
+	assert.Nil(err)
 	assert.Equal(0, len(sol.FoundWords), "Expected to find 0 words but found %d", len(sol.FoundWords))
 	assert.Equal([]string{"XYZ", "123"}, sol.NotFoundedWords(), "Expected not found words to be [XYZ, 123]")
 	assert.Equal([]string{}, sol.FoundedWords(), "Expected found words to be []")

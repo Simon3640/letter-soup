@@ -12,6 +12,7 @@ type LetterSoupCreate struct {
 }
 
 type LetterSoupCreateSolution struct {
+	LetterSoupCreate
 	FoundedWords    []string
 	NotFoundedWords []string
 }
