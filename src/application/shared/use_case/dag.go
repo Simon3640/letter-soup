@@ -4,8 +4,8 @@ import (
 	"context"
 	"sync"
 
-	"gormgoskeleton/src/application/shared/locales"
-	"gormgoskeleton/src/application/shared/status"
+	"lettersoup/src/application/shared/locales"
+	"lettersoup/src/application/shared/status"
 )
 
 type DagStep[I any, O any] struct {

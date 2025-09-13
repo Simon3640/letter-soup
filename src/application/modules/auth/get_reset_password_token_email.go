@@ -3,16 +3,16 @@ package auth
 import (
 	"context"
 
-	contractsProviders "gormgoskeleton/src/application/contracts/providers"
-	dtos "gormgoskeleton/src/application/shared/DTOs"
-	"gormgoskeleton/src/application/shared/locales"
-	"gormgoskeleton/src/application/shared/locales/messages"
-	email_service "gormgoskeleton/src/application/shared/services/emails"
-	email_models "gormgoskeleton/src/application/shared/services/emails/models"
-	"gormgoskeleton/src/application/shared/settings"
-	"gormgoskeleton/src/application/shared/status"
-	"gormgoskeleton/src/application/shared/templates"
-	usecase "gormgoskeleton/src/application/shared/use_case"
+	contractsProviders "lettersoup/src/application/contracts/providers"
+	dtos "lettersoup/src/application/shared/DTOs"
+	"lettersoup/src/application/shared/locales"
+	"lettersoup/src/application/shared/locales/messages"
+	email_service "lettersoup/src/application/shared/services/emails"
+	email_models "lettersoup/src/application/shared/services/emails/models"
+	"lettersoup/src/application/shared/settings"
+	"lettersoup/src/application/shared/status"
+	"lettersoup/src/application/shared/templates"
+	usecase "lettersoup/src/application/shared/use_case"
 )
 
 type GetResetPasswordSendEmailUseCase struct {

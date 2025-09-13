@@ -4,7 +4,7 @@ import (
 	"math"
 	"strings"
 
-	"gormgoskeleton/src/domain/models"
+	"lettersoup/src/domain/models"
 )
 
 type LetterSoupCreate struct {

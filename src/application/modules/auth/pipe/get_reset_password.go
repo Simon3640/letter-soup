@@ -3,10 +3,10 @@ package auth_pipes
 import (
 	"context"
 
-	"gormgoskeleton/src/application/modules/auth"
+	"lettersoup/src/application/modules/auth"
 
-	"gormgoskeleton/src/application/shared/locales"
-	usecase "gormgoskeleton/src/application/shared/use_case"
+	"lettersoup/src/application/shared/locales"
+	usecase "lettersoup/src/application/shared/use_case"
 )
 
 func NewGetResetPasswordPipe(

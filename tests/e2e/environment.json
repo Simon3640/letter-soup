@@ -1,6 +1,6 @@
 {
 	"id": "4a225d0c-3e40-4a2b-b4a9-683bd8d6b3f3",
-	"name": "gormgoskeleton",
+	"name": "lettersoup",
 	"values": [
 		{
 			"key": "baseURL",
@@ -22,7 +22,7 @@
 		},
 		{
 			"key": "userEmail",
-			"value": "newusertest@gormgoskeleton.com",
+			"value": "newusertest@lettersoup.com",
 			"type": "default",
 			"enabled": true
 		},

@@ -1,7 +1,7 @@
 package middlewares
 
 import (
-	"gormgoskeleton/src/infrastructure/handlers"
+	"lettersoup/src/infrastructure/handlers"
 	"strconv"
 
 	"github.com/gin-gonic/gin"

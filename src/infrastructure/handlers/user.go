@@ -6,14 +6,14 @@ import (
 	"net/http"
 	"strconv"
 
-	user_pipes "gormgoskeleton/src/application/modules/user/pipes"
-	usecases_user "gormgoskeleton/src/application/modules/user/use_cases"
-	dtos "gormgoskeleton/src/application/shared/DTOs"
-	"gormgoskeleton/src/domain/models"
-	domain_utils "gormgoskeleton/src/domain/utils"
-	database "gormgoskeleton/src/infrastructure/database/gormgoskeleton"
-	"gormgoskeleton/src/infrastructure/providers"
-	"gormgoskeleton/src/infrastructure/repositories"
+	user_pipes "lettersoup/src/application/modules/user/pipes"
+	usecases_user "lettersoup/src/application/modules/user/use_cases"
+	dtos "lettersoup/src/application/shared/DTOs"
+	"lettersoup/src/domain/models"
+	domain_utils "lettersoup/src/domain/utils"
+	database "lettersoup/src/infrastructure/database/lettersoup"
+	"lettersoup/src/infrastructure/providers"
+	"lettersoup/src/infrastructure/repositories"
 )
 
 // CreateUser

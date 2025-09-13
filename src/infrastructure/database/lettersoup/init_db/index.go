@@ -3,10 +3,10 @@ package initdb
 import (
 	"gorm.io/gorm"
 
-	contractsProviders "gormgoskeleton/src/application/contracts/providers"
-	"gormgoskeleton/src/application/shared/defaults"
-	"gormgoskeleton/src/infrastructure/database/gormgoskeleton/init_db/setups"
-	dbModels "gormgoskeleton/src/infrastructure/database/gormgoskeleton/models"
+	contractsProviders "lettersoup/src/application/contracts/providers"
+	"lettersoup/src/application/shared/defaults"
+	"lettersoup/src/infrastructure/database/lettersoup/init_db/setups"
+	dbModels "lettersoup/src/infrastructure/database/lettersoup/models"
 )
 
 func InitMigrate(db *gorm.DB, logger contractsProviders.ILoggerProvider) {

@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	"gormgoskeleton/src/application/shared/locales"
-	"gormgoskeleton/src/application/shared/mocks"
-	dtomocks "gormgoskeleton/src/application/shared/mocks/dtos"
-	"gormgoskeleton/src/application/shared/status"
+	"lettersoup/src/application/shared/locales"
+	"lettersoup/src/application/shared/mocks"
+	dtomocks "lettersoup/src/application/shared/mocks/dtos"
+	"lettersoup/src/application/shared/status"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

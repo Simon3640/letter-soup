@@ -5,12 +5,12 @@ import (
 	"testing"
 	"time"
 
-	dtos "gormgoskeleton/src/application/shared/DTOs"
-	app_context "gormgoskeleton/src/application/shared/context"
-	"gormgoskeleton/src/application/shared/locales"
-	"gormgoskeleton/src/application/shared/mocks"
-	dtomocks "gormgoskeleton/src/application/shared/mocks/dtos"
-	"gormgoskeleton/src/domain/models"
+	dtos "lettersoup/src/application/shared/DTOs"
+	app_context "lettersoup/src/application/shared/context"
+	"lettersoup/src/application/shared/locales"
+	"lettersoup/src/application/shared/mocks"
+	dtomocks "lettersoup/src/application/shared/mocks/dtos"
+	"lettersoup/src/domain/models"
 
 	"github.com/stretchr/testify/assert"
 )

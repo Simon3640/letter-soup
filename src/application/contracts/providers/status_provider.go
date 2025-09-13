@@ -1,7 +1,7 @@
 package contractsproviders
 
 import (
-	"gormgoskeleton/src/domain/models"
+	"lettersoup/src/domain/models"
 	"time"
 )
 

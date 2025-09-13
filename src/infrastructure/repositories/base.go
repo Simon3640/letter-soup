@@ -3,10 +3,10 @@ package repositories
 import (
 	"fmt"
 
-	contractsProviders "gormgoskeleton/src/application/contracts/providers"
-	contracts_repositories "gormgoskeleton/src/application/contracts/repositories"
-	application_errors "gormgoskeleton/src/application/shared/errors"
-	domain_utils "gormgoskeleton/src/domain/utils"
+	contractsProviders "lettersoup/src/application/contracts/providers"
+	contracts_repositories "lettersoup/src/application/contracts/repositories"
+	application_errors "lettersoup/src/application/shared/errors"
+	domain_utils "lettersoup/src/domain/utils"
 
 	"gorm.io/gorm"
 )

@@ -2,11 +2,11 @@ package services
 
 import (
 	"fmt"
-	application_errors "gormgoskeleton/src/application/shared/errors"
-	"gormgoskeleton/src/application/shared/locales/messages"
-	"gormgoskeleton/src/application/shared/status"
-	"gormgoskeleton/src/domain/models"
-	domain_utils "gormgoskeleton/src/domain/utils"
+	application_errors "lettersoup/src/application/shared/errors"
+	"lettersoup/src/application/shared/locales/messages"
+	"lettersoup/src/application/shared/status"
+	"lettersoup/src/domain/models"
+	domain_utils "lettersoup/src/domain/utils"
 	"strings"
 )
 

@@ -2,14 +2,14 @@ package middlewares
 
 import (
 	"context"
-	"gormgoskeleton/src/application/modules/auth"
-	app_context "gormgoskeleton/src/application/shared/context"
-	"gormgoskeleton/src/application/shared/locales"
-	"gormgoskeleton/src/domain/models"
-	"gormgoskeleton/src/infrastructure/api"
-	database "gormgoskeleton/src/infrastructure/database/gormgoskeleton"
-	"gormgoskeleton/src/infrastructure/providers"
-	"gormgoskeleton/src/infrastructure/repositories"
+	"lettersoup/src/application/modules/auth"
+	app_context "lettersoup/src/application/shared/context"
+	"lettersoup/src/application/shared/locales"
+	"lettersoup/src/domain/models"
+	"lettersoup/src/infrastructure/api"
+	database "lettersoup/src/infrastructure/database/lettersoup"
+	"lettersoup/src/infrastructure/providers"
+	"lettersoup/src/infrastructure/repositories"
 
 	"github.com/gin-gonic/gin"
 )

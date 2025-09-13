@@ -1,4 +1,4 @@
-module gormgoskeleton
+module lettersoup
 
 go 1.25
 

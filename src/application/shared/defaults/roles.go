@@ -1,6 +1,6 @@
 package defaults
 
-import "gormgoskeleton/src/domain/models"
+import "lettersoup/src/domain/models"
 
 // list of default roles
 

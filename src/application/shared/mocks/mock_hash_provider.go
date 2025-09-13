@@ -1,8 +1,8 @@
 package mocks
 
 import (
-	contractsProviders "gormgoskeleton/src/application/contracts/providers"
-	application_errors "gormgoskeleton/src/application/shared/errors"
+	contractsProviders "lettersoup/src/application/contracts/providers"
+	application_errors "lettersoup/src/application/shared/errors"
 
 	"github.com/stretchr/testify/mock"
 )

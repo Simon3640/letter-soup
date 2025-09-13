@@ -3,10 +3,10 @@ package integrationtest
 import (
 	"testing"
 
-	dtomocks "gormgoskeleton/src/application/shared/mocks/dtos"
-	database "gormgoskeleton/src/infrastructure/database/gormgoskeleton"
-	"gormgoskeleton/src/infrastructure/providers"
-	"gormgoskeleton/src/infrastructure/repositories"
+	dtomocks "lettersoup/src/application/shared/mocks/dtos"
+	database "lettersoup/src/infrastructure/database/lettersoup"
+	"lettersoup/src/infrastructure/providers"
+	"lettersoup/src/infrastructure/repositories"
 
 	"github.com/stretchr/testify/assert"
 )

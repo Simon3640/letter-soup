@@ -4,12 +4,12 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"gormgoskeleton/src/application/modules/auth"
-	auth_pipes "gormgoskeleton/src/application/modules/auth/pipe"
-	dtos "gormgoskeleton/src/application/shared/DTOs"
-	database "gormgoskeleton/src/infrastructure/database/gormgoskeleton"
-	"gormgoskeleton/src/infrastructure/providers"
-	"gormgoskeleton/src/infrastructure/repositories"
+	"lettersoup/src/application/modules/auth"
+	auth_pipes "lettersoup/src/application/modules/auth/pipe"
+	dtos "lettersoup/src/application/shared/DTOs"
+	database "lettersoup/src/infrastructure/database/lettersoup"
+	"lettersoup/src/infrastructure/providers"
+	"lettersoup/src/infrastructure/repositories"
 )
 
 // access-token

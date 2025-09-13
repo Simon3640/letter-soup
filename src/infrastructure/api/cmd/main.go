@@ -1,11 +1,11 @@
 package main
 
 import (
-	docs "gormgoskeleton/docs"
-	"gormgoskeleton/src/application/shared/settings"
-	"gormgoskeleton/src/infrastructure"
-	routes "gormgoskeleton/src/infrastructure/api/routes"
-	providers "gormgoskeleton/src/infrastructure/providers"
+	docs "lettersoup/docs"
+	"lettersoup/src/application/shared/settings"
+	"lettersoup/src/infrastructure"
+	routes "lettersoup/src/infrastructure/api/routes"
+	providers "lettersoup/src/infrastructure/providers"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-contrib/graceful"

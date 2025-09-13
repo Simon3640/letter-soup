@@ -4,17 +4,17 @@ import (
 	"context"
 	"time"
 
-	contractsProviders "gormgoskeleton/src/application/contracts/providers"
-	contracts_repositories "gormgoskeleton/src/application/contracts/repositories"
-	dtos "gormgoskeleton/src/application/shared/DTOs"
-	"gormgoskeleton/src/application/shared/guards"
-	"gormgoskeleton/src/application/shared/locales"
-	"gormgoskeleton/src/application/shared/locales/messages"
-	"gormgoskeleton/src/application/shared/settings"
-	"gormgoskeleton/src/application/shared/status"
-	usecase "gormgoskeleton/src/application/shared/use_case"
-	"gormgoskeleton/src/domain/models"
-	domain_utils "gormgoskeleton/src/domain/utils"
+	contractsProviders "lettersoup/src/application/contracts/providers"
+	contracts_repositories "lettersoup/src/application/contracts/repositories"
+	dtos "lettersoup/src/application/shared/DTOs"
+	"lettersoup/src/application/shared/guards"
+	"lettersoup/src/application/shared/locales"
+	"lettersoup/src/application/shared/locales/messages"
+	"lettersoup/src/application/shared/settings"
+	"lettersoup/src/application/shared/status"
+	usecase "lettersoup/src/application/shared/use_case"
+	"lettersoup/src/domain/models"
+	domain_utils "lettersoup/src/domain/utils"
 )
 
 type GetAllUserUseCase struct {

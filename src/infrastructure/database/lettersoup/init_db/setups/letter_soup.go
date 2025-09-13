@@ -1,10 +1,10 @@
 package setups
 
 import (
-	dtos "gormgoskeleton/src/application/shared/DTOs"
-	"gormgoskeleton/src/domain/models"
-	dbModels "gormgoskeleton/src/infrastructure/database/gormgoskeleton/models"
-	"gormgoskeleton/src/infrastructure/repositories"
+	dtos "lettersoup/src/application/shared/DTOs"
+	"lettersoup/src/domain/models"
+	dbModels "lettersoup/src/infrastructure/database/lettersoup/models"
+	"lettersoup/src/infrastructure/repositories"
 )
 
 type SetupLetterSoup struct {

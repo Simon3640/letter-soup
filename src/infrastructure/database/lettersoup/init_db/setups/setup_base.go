@@ -3,9 +3,9 @@ package setups
 import (
 	"fmt"
 
-	contractsProviders "gormgoskeleton/src/application/contracts/providers"
-	dbModels "gormgoskeleton/src/infrastructure/database/gormgoskeleton/models"
-	"gormgoskeleton/src/infrastructure/repositories"
+	contractsProviders "lettersoup/src/application/contracts/providers"
+	dbModels "lettersoup/src/infrastructure/database/lettersoup/models"
+	"lettersoup/src/infrastructure/repositories"
 
 	"gorm.io/gorm"
 )

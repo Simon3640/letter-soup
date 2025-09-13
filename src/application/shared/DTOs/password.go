@@ -1,7 +1,7 @@
 package dtos
 
 import (
-	"gormgoskeleton/src/domain/models"
+	"lettersoup/src/domain/models"
 	"time"
 )
 

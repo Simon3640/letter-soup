@@ -1,8 +1,8 @@
 package dtos
 
 import (
-	"gormgoskeleton/src/application/shared/settings"
-	"gormgoskeleton/src/domain/models"
+	"lettersoup/src/application/shared/settings"
+	"lettersoup/src/domain/models"
 	"time"
 )
 

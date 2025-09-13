@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"gormgoskeleton/src/application/shared/locales/messages"
-	"gormgoskeleton/src/application/shared/status"
+	"lettersoup/src/application/shared/locales/messages"
+	"lettersoup/src/application/shared/status"
 )
 
 type ApplicationError struct {

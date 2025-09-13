@@ -1,1 +1,1 @@
-CREATE DATABASE gormgoskeleton;
+CREATE DATABASE lettersoup;

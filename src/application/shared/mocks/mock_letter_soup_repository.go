@@ -1,9 +1,9 @@
 package mocks
 
 import (
-	contracts_repositories "gormgoskeleton/src/application/contracts/repositories"
-	dtos "gormgoskeleton/src/application/shared/DTOs"
-	"gormgoskeleton/src/domain/models"
+	contracts_repositories "lettersoup/src/application/contracts/repositories"
+	dtos "lettersoup/src/application/shared/DTOs"
+	"lettersoup/src/domain/models"
 )
 
 type MockLetterSoupRepository struct {

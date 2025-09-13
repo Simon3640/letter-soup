@@ -4,12 +4,12 @@ import (
 	"encoding/json"
 	"net/http"
 
-	usecases_letter_soup "gormgoskeleton/src/application/modules/letter_soup/use_cases"
-	dtos "gormgoskeleton/src/application/shared/DTOs"
-	"gormgoskeleton/src/domain/models"
-	database "gormgoskeleton/src/infrastructure/database/gormgoskeleton"
-	"gormgoskeleton/src/infrastructure/providers"
-	"gormgoskeleton/src/infrastructure/repositories"
+	usecases_letter_soup "lettersoup/src/application/modules/letter_soup/use_cases"
+	dtos "lettersoup/src/application/shared/DTOs"
+	"lettersoup/src/domain/models"
+	database "lettersoup/src/infrastructure/database/lettersoup"
+	"lettersoup/src/infrastructure/providers"
+	"lettersoup/src/infrastructure/repositories"
 )
 
 // CreateLetterSoup

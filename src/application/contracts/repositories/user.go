@@ -1,9 +1,9 @@
 package contracts_repositories
 
 import (
-	dtos "gormgoskeleton/src/application/shared/DTOs"
-	application_errors "gormgoskeleton/src/application/shared/errors"
-	"gormgoskeleton/src/domain/models"
+	dtos "lettersoup/src/application/shared/DTOs"
+	application_errors "lettersoup/src/application/shared/errors"
+	"lettersoup/src/domain/models"
 )
 
 type IUserRepository interface {

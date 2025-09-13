@@ -3,7 +3,7 @@ package services
 import (
 	"testing"
 
-	"gormgoskeleton/src/domain/models"
+	"lettersoup/src/domain/models"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -4,13 +4,13 @@ import (
 	"context"
 	"go/types"
 
-	contractsProviders "gormgoskeleton/src/application/contracts/providers"
-	contracts_repositories "gormgoskeleton/src/application/contracts/repositories"
-	"gormgoskeleton/src/application/shared/guards"
-	"gormgoskeleton/src/application/shared/locales"
-	"gormgoskeleton/src/application/shared/locales/messages"
-	"gormgoskeleton/src/application/shared/status"
-	usecase "gormgoskeleton/src/application/shared/use_case"
+	contractsProviders "lettersoup/src/application/contracts/providers"
+	contracts_repositories "lettersoup/src/application/contracts/repositories"
+	"lettersoup/src/application/shared/guards"
+	"lettersoup/src/application/shared/locales"
+	"lettersoup/src/application/shared/locales/messages"
+	"lettersoup/src/application/shared/status"
+	usecase "lettersoup/src/application/shared/use_case"
 )
 
 type DeleteUserUseCase struct {

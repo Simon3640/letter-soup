@@ -5,10 +5,10 @@ import (
 	"testing"
 	"time"
 
-	"gormgoskeleton/src/application/shared/locales"
-	"gormgoskeleton/src/application/shared/locales/messages"
-	"gormgoskeleton/src/application/shared/mocks"
-	"gormgoskeleton/src/domain/models"
+	"lettersoup/src/application/shared/locales"
+	"lettersoup/src/application/shared/locales/messages"
+	"lettersoup/src/application/shared/mocks"
+	"lettersoup/src/domain/models"
 
 	"github.com/stretchr/testify/assert"
 )

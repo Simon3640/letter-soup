@@ -8,11 +8,11 @@ import (
 	"fmt"
 	"strings"
 
-	contractsProviders "gormgoskeleton/src/application/contracts/providers"
-	application_errors "gormgoskeleton/src/application/shared/errors"
-	"gormgoskeleton/src/application/shared/locales/messages"
-	"gormgoskeleton/src/application/shared/settings"
-	"gormgoskeleton/src/application/shared/status"
+	contractsProviders "lettersoup/src/application/contracts/providers"
+	application_errors "lettersoup/src/application/shared/errors"
+	"lettersoup/src/application/shared/locales/messages"
+	"lettersoup/src/application/shared/settings"
+	"lettersoup/src/application/shared/status"
 
 	"golang.org/x/crypto/argon2"
 )

@@ -3,18 +3,18 @@ package usecases_user
 import (
 	"context"
 
-	contractsProviders "gormgoskeleton/src/application/contracts/providers"
-	contracts_repositories "gormgoskeleton/src/application/contracts/repositories"
-	"gormgoskeleton/src/application/shared/locales"
-	"gormgoskeleton/src/application/shared/locales/messages"
-	"gormgoskeleton/src/application/shared/services"
-	email_service "gormgoskeleton/src/application/shared/services/emails"
-	email_models "gormgoskeleton/src/application/shared/services/emails/models"
-	"gormgoskeleton/src/application/shared/settings"
-	"gormgoskeleton/src/application/shared/status"
-	"gormgoskeleton/src/application/shared/templates"
-	usecase "gormgoskeleton/src/application/shared/use_case"
-	"gormgoskeleton/src/domain/models"
+	contractsProviders "lettersoup/src/application/contracts/providers"
+	contracts_repositories "lettersoup/src/application/contracts/repositories"
+	"lettersoup/src/application/shared/locales"
+	"lettersoup/src/application/shared/locales/messages"
+	"lettersoup/src/application/shared/services"
+	email_service "lettersoup/src/application/shared/services/emails"
+	email_models "lettersoup/src/application/shared/services/emails/models"
+	"lettersoup/src/application/shared/settings"
+	"lettersoup/src/application/shared/status"
+	"lettersoup/src/application/shared/templates"
+	usecase "lettersoup/src/application/shared/use_case"
+	"lettersoup/src/domain/models"
 )
 
 type CreateUserSendEmailUseCase struct {

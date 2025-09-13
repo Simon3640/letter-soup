@@ -1,6 +1,6 @@
 package email_service
 
-import "gormgoskeleton/src/application/shared/locales"
+import "lettersoup/src/application/shared/locales"
 
 type SubjectKeysEnum string
 

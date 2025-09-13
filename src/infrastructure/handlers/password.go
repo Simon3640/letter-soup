@@ -4,11 +4,11 @@ import (
 	"encoding/json"
 	"net/http"
 
-	usecases_password "gormgoskeleton/src/application/modules/password/use_cases"
-	dtos "gormgoskeleton/src/application/shared/DTOs"
-	database "gormgoskeleton/src/infrastructure/database/gormgoskeleton"
-	"gormgoskeleton/src/infrastructure/providers"
-	"gormgoskeleton/src/infrastructure/repositories"
+	usecases_password "lettersoup/src/application/modules/password/use_cases"
+	dtos "lettersoup/src/application/shared/DTOs"
+	database "lettersoup/src/infrastructure/database/lettersoup"
+	"lettersoup/src/infrastructure/providers"
+	"lettersoup/src/infrastructure/repositories"
 )
 
 // CreatePassword

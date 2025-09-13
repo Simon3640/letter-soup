@@ -2,8 +2,8 @@ package handlers
 
 import (
 	"context"
-	"gormgoskeleton/src/application/shared/locales"
 	"io"
+	"lettersoup/src/application/shared/locales"
 	"net/http"
 )
 

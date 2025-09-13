@@ -4,14 +4,14 @@ import (
 	"context"
 	"time"
 
-	contractsProviders "gormgoskeleton/src/application/contracts/providers"
-	contracts_repositories "gormgoskeleton/src/application/contracts/repositories"
-	dtos "gormgoskeleton/src/application/shared/DTOs"
-	"gormgoskeleton/src/application/shared/locales"
-	"gormgoskeleton/src/application/shared/locales/messages"
-	"gormgoskeleton/src/application/shared/services"
-	"gormgoskeleton/src/application/shared/status"
-	usecase "gormgoskeleton/src/application/shared/use_case"
+	contractsProviders "lettersoup/src/application/contracts/providers"
+	contracts_repositories "lettersoup/src/application/contracts/repositories"
+	dtos "lettersoup/src/application/shared/DTOs"
+	"lettersoup/src/application/shared/locales"
+	"lettersoup/src/application/shared/locales/messages"
+	"lettersoup/src/application/shared/services"
+	"lettersoup/src/application/shared/status"
+	usecase "lettersoup/src/application/shared/use_case"
 )
 
 type CreatePasswordTokenUseCase struct {

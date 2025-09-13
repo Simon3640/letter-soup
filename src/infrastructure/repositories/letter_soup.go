@@ -1,12 +1,12 @@
 package repositories
 
 import (
-	contractsProviders "gormgoskeleton/src/application/contracts/providers"
-	contracts_repositories "gormgoskeleton/src/application/contracts/repositories"
-	dtos "gormgoskeleton/src/application/shared/DTOs"
-	"gormgoskeleton/src/domain/models"
-	dbModels "gormgoskeleton/src/infrastructure/database/gormgoskeleton/models"
-	dbmodels "gormgoskeleton/src/infrastructure/database/gormgoskeleton/models"
+	contractsProviders "lettersoup/src/application/contracts/providers"
+	contracts_repositories "lettersoup/src/application/contracts/repositories"
+	dtos "lettersoup/src/application/shared/DTOs"
+	"lettersoup/src/domain/models"
+	dbModels "lettersoup/src/infrastructure/database/lettersoup/models"
+	dbmodels "lettersoup/src/infrastructure/database/lettersoup/models"
 	"strings"
 
 	"gorm.io/gorm"

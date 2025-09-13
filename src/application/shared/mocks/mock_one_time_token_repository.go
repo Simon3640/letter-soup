@@ -1,10 +1,10 @@
 package mocks
 
 import (
-	contracts_repositories "gormgoskeleton/src/application/contracts/repositories"
-	dtos "gormgoskeleton/src/application/shared/DTOs"
-	application_errors "gormgoskeleton/src/application/shared/errors"
-	"gormgoskeleton/src/domain/models"
+	contracts_repositories "lettersoup/src/application/contracts/repositories"
+	dtos "lettersoup/src/application/shared/DTOs"
+	application_errors "lettersoup/src/application/shared/errors"
+	"lettersoup/src/domain/models"
 )
 
 type MockOneTimeTokenRepository struct {

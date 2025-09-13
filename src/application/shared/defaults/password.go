@@ -1,8 +1,8 @@
 package defaults
 
 import (
-	dtos "gormgoskeleton/src/application/shared/DTOs"
-	"gormgoskeleton/src/domain/models"
+	dtos "lettersoup/src/application/shared/DTOs"
+	"lettersoup/src/domain/models"
 )
 
 var AdminPassword = dtos.PasswordCreate{

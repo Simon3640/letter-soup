@@ -4,11 +4,11 @@ import (
 	"context"
 	// "errors"
 
-	contractsProviders "gormgoskeleton/src/application/contracts/providers"
-	"gormgoskeleton/src/application/shared/locales"
-	"gormgoskeleton/src/application/shared/mocks"
-	dtomocks "gormgoskeleton/src/application/shared/mocks/dtos"
-	"gormgoskeleton/src/application/shared/status"
+	contractsProviders "lettersoup/src/application/contracts/providers"
+	"lettersoup/src/application/shared/locales"
+	"lettersoup/src/application/shared/mocks"
+	dtomocks "lettersoup/src/application/shared/mocks/dtos"
+	"lettersoup/src/application/shared/status"
 	"testing"
 	"time"
 

@@ -1,7 +1,7 @@
 package email_service
 
 import (
-	email_models "gormgoskeleton/src/application/shared/services/emails/models"
+	email_models "lettersoup/src/application/shared/services/emails/models"
 )
 
 type OneTimePasswordEmailService struct {

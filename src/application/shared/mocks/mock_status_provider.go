@@ -3,8 +3,8 @@ package mocks
 import (
 	"time"
 
-	contractsProviders "gormgoskeleton/src/application/contracts/providers"
-	"gormgoskeleton/src/domain/models"
+	contractsProviders "lettersoup/src/application/contracts/providers"
+	"lettersoup/src/domain/models"
 
 	"github.com/stretchr/testify/mock"
 )

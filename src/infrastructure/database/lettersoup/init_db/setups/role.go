@@ -1,9 +1,9 @@
 package setups
 
 import (
-	"gormgoskeleton/src/domain/models"
-	dbModels "gormgoskeleton/src/infrastructure/database/gormgoskeleton/models"
-	"gormgoskeleton/src/infrastructure/repositories"
+	"lettersoup/src/domain/models"
+	dbModels "lettersoup/src/infrastructure/database/lettersoup/models"
+	"lettersoup/src/infrastructure/repositories"
 )
 
 type SetupRole struct {

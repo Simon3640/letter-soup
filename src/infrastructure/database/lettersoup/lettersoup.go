@@ -1,18 +1,18 @@
 package database
 
 import (
-	contractsProviders "gormgoskeleton/src/application/contracts/providers"
-	initdb "gormgoskeleton/src/infrastructure/database/gormgoskeleton/init_db"
+	contractsProviders "lettersoup/src/application/contracts/providers"
+	initdb "lettersoup/src/infrastructure/database/lettersoup/init_db"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
-type GormGoSkeletonDB struct{}
+type lettersoupDB struct{}
 
 var DB *gorm.DB
 
-func (ggsbd GormGoSkeletonDB) SetUp(host string, port string, user string, password string, dbname string, ssl *bool, logger contractsProviders.ILoggerProvider) {
+func (ggsbd lettersoupDB) SetUp(host string, port string, user string, password string, dbname string, ssl *bool, logger contractsProviders.ILoggerProvider) {
 	var sslmode string
 	if ssl != nil && *ssl {
 		logger.Info("SSL is enabled")
@@ -31,8 +31,8 @@ func (ggsbd GormGoSkeletonDB) SetUp(host string, port string, user string, passw
 	initdb.InitMigrate(db, logger)
 }
 
-var Gormgoskeletondb *GormGoSkeletonDB
+var Lettersoupdb *lettersoupDB
 
 func init() {
-	Gormgoskeletondb = &GormGoSkeletonDB{}
+	Lettersoupdb = &lettersoupDB{}
 }

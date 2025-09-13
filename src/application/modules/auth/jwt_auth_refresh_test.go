@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	contractsProviders "gormgoskeleton/src/application/contracts/providers"
-	"gormgoskeleton/src/application/shared/locales"
-	"gormgoskeleton/src/application/shared/mocks"
+	contractsProviders "lettersoup/src/application/contracts/providers"
+	"lettersoup/src/application/shared/locales"
+	"lettersoup/src/application/shared/mocks"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

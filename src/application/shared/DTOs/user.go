@@ -1,6 +1,6 @@
 package dtos
 
-import "gormgoskeleton/src/domain/models"
+import "lettersoup/src/domain/models"
 
 type UserCreate struct {
 	models.UserBase

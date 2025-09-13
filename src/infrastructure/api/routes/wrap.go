@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"gormgoskeleton/src/infrastructure/handlers"
+	"lettersoup/src/infrastructure/handlers"
 
 	"github.com/gin-gonic/gin"
 )

@@ -4,9 +4,9 @@ import (
 	"os"
 	"testing"
 
-	infrastructure "gormgoskeleton/src/infrastructure"
-	database "gormgoskeleton/src/infrastructure/database/gormgoskeleton"
-	"gormgoskeleton/src/infrastructure/providers"
+	infrastructure "lettersoup/src/infrastructure"
+	database "lettersoup/src/infrastructure/database/lettersoup"
+	"lettersoup/src/infrastructure/providers"
 )
 
 func TestMain(m *testing.M) {

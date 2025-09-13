@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"gormgoskeleton/src/application/shared/status"
-	usecase "gormgoskeleton/src/application/shared/use_case"
+	"lettersoup/src/application/shared/status"
+	usecase "lettersoup/src/application/shared/use_case"
 )
 
 type RequestResolver[D any] struct {

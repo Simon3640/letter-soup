@@ -3,11 +3,11 @@ package integrationtest
 import (
 	"testing"
 
-	"gormgoskeleton/src/application/shared/status"
-	domain_utils "gormgoskeleton/src/domain/utils"
-	database "gormgoskeleton/src/infrastructure/database/gormgoskeleton"
-	"gormgoskeleton/src/infrastructure/providers"
-	"gormgoskeleton/src/infrastructure/repositories"
+	"lettersoup/src/application/shared/status"
+	domain_utils "lettersoup/src/domain/utils"
+	database "lettersoup/src/infrastructure/database/lettersoup"
+	"lettersoup/src/infrastructure/providers"
+	"lettersoup/src/infrastructure/repositories"
 
 	"github.com/stretchr/testify/assert"
 	"gorm.io/gorm"

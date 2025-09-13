@@ -5,10 +5,10 @@ import (
 	"encoding/json"
 	"time"
 
-	contractsProviders "gormgoskeleton/src/application/contracts/providers"
-	application_errors "gormgoskeleton/src/application/shared/errors"
-	"gormgoskeleton/src/application/shared/locales/messages"
-	"gormgoskeleton/src/application/shared/status"
+	contractsProviders "lettersoup/src/application/contracts/providers"
+	application_errors "lettersoup/src/application/shared/errors"
+	"lettersoup/src/application/shared/locales/messages"
+	"lettersoup/src/application/shared/status"
 
 	"github.com/redis/go-redis/v9"
 )

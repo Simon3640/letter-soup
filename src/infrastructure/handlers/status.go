@@ -3,9 +3,9 @@ package handlers
 import (
 	"time"
 
-	usecases "gormgoskeleton/src/application/modules/status/use_cases"
-	"gormgoskeleton/src/domain/models"
-	"gormgoskeleton/src/infrastructure/providers"
+	usecases "lettersoup/src/application/modules/status/use_cases"
+	"lettersoup/src/domain/models"
+	"lettersoup/src/infrastructure/providers"
 )
 
 // Health Check
