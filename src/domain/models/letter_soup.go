@@ -8,6 +8,7 @@ import (
 type LetterSoupBase struct {
 	Rows    int
 	Columns int
+	UserID  uint     `json:"user_id"`
 	Grid    []string `json:"grid"`
 	Words   []string `json:"words"`
 }
@@ -15,6 +16,8 @@ type LetterSoupBase struct {
 type LetterSoup struct {
 	LetterSoupBase
 	DBBaseModel
+	FoundedWords    []string `json:"founded_words"`
+	NotFoundedWords []string `json:"not_founded_words"`
 }
 
 func (ls *LetterSoupBase) Validate() []string {

@@ -86,8 +86,6 @@ func (uc *CreateLetterSoupUseCase) Execute(ctx context.Context,
 func NewCreateLetterSoupUseCase(
 	log contractsProviders.ILoggerProvider,
 	repo contracts_repositories.ILetterSoupRepository,
-	hashProvider contractsProviders.IHashProvider,
-	skip_guards bool,
 ) *CreateLetterSoupUseCase {
 	return &CreateLetterSoupUseCase{
 		BaseUseCaseValidation: usecase.BaseUseCaseValidation[dtos.LetterSoupCreate, models.LetterSoup]{
