@@ -31,4 +31,6 @@ func Router(r *gin.RouterGroup) {
 	r.GET("/auth/password-reset/:identifier", wrapHandler(handlers.RequestPasswordReset))
 	r.GET("/auth/login-otp/:otp", wrapHandler(handlers.LoginOTP))
 
+	// LetterSoup routes
+	private.POST("/letter-soup", wrapHandler(handlers.CreateLetterSoup))
 }

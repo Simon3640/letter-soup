@@ -7,6 +7,7 @@ import (
 	"gormgoskeleton/src/domain/models"
 	dbModels "gormgoskeleton/src/infrastructure/database/gormgoskeleton/models"
 	dbmodels "gormgoskeleton/src/infrastructure/database/gormgoskeleton/models"
+	"strings"
 
 	"gorm.io/gorm"
 )
@@ -21,19 +22,35 @@ type LetterSoupConverter struct{}
 
 var _ ModelConverter[dtos.LetterSoupCreateSolution, dtos.LetterSoupUpdateSolution, models.LetterSoup, dbModels.LetterSoup] = (*LetterSoupConverter)(nil)
 
+const separator = "\u241F"
+
+// Convierte []string a string para almacenar
+func StringsToDBString(list []string) string {
+	return strings.Join(list, separator)
+}
+
+// Convierte string de la DB de vuelta a []string
+func DBStringToStrings(s string) []string {
+	if s == "" {
+		return []string{}
+	}
+	return strings.Split(s, separator)
+}
+
 func (uc *LetterSoupConverter) ToGormCreate(model dtos.LetterSoupCreateSolution) *dbModels.LetterSoup {
 	return &dbModels.LetterSoup{
 		Rows:            model.Rows,
 		Columns:         model.Columns,
-		Grid:            model.Grid,
-		Words:           model.Words,
+		Grid:            StringsToDBString(model.Grid),
+		Words:           StringsToDBString(model.Words),
 		UserID:          model.UserID,
-		FoundedWords:    model.FoundedWords,
-		NotFoundedWords: model.NotFoundedWords,
+		FoundedWords:    StringsToDBString(model.FoundedWords),
+		NotFoundedWords: StringsToDBString(model.NotFoundedWords),
 	}
 }
 
 func (uc *LetterSoupConverter) ToDomain(ormModel *dbModels.LetterSoup) *models.LetterSoup {
+
 	return &models.LetterSoup{
 		DBBaseModel: models.DBBaseModel{
 			ID:        ormModel.ID,
@@ -44,12 +61,12 @@ func (uc *LetterSoupConverter) ToDomain(ormModel *dbModels.LetterSoup) *models.L
 		LetterSoupBase: models.LetterSoupBase{
 			Rows:    ormModel.Rows,
 			Columns: ormModel.Columns,
-			Grid:    ormModel.Grid,
-			Words:   ormModel.Words,
+			Grid:    DBStringToStrings(ormModel.Grid),
+			Words:   DBStringToStrings(ormModel.Words),
 			UserID:  ormModel.UserID,
 		},
-		FoundedWords:    ormModel.FoundedWords,
-		NotFoundedWords: ormModel.NotFoundedWords,
+		FoundedWords:    DBStringToStrings(ormModel.FoundedWords),
+		NotFoundedWords: DBStringToStrings(ormModel.NotFoundedWords),
 	}
 }
 
@@ -57,17 +74,17 @@ func (uc *LetterSoupConverter) ToGormUpdate(model dtos.LetterSoupUpdateSolution)
 	var updated dbmodels.LetterSoup
 
 	if model.Grid != nil {
-		updated.Grid = *model.Grid
+		updated.Grid = StringsToDBString(*model.Grid)
 	}
 	if model.Words != nil {
-		updated.Words = *model.Words
+		updated.Words = StringsToDBString(*model.Words)
 	}
 
 	if model.FoundedWords != nil {
-		updated.FoundedWords = model.FoundedWords
+		updated.FoundedWords = StringsToDBString(model.FoundedWords)
 	}
 	if model.NotFoundedWords != nil {
-		updated.NotFoundedWords = model.NotFoundedWords
+		updated.NotFoundedWords = StringsToDBString(model.NotFoundedWords)
 	}
 	return &updated
 }
