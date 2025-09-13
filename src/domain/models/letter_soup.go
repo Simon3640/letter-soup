@@ -8,14 +8,19 @@ import (
 	"unicode/utf8"
 )
 
-type LetterSoup struct {
+type LetterSoupBase struct {
 	rows    int
 	columns int
 	Grid    []string `json:"grid"`
 	Words   []string `json:"words"`
 }
 
-func (ls *LetterSoup) Validate() []string {
+type LetterSoup struct {
+	LetterSoupBase
+	DBBaseModel
+}
+
+func (ls *LetterSoupBase) Validate() []string {
 	var errs []string
 
 	ls.rows = len(ls.Grid)
@@ -52,7 +57,7 @@ type FoundWord struct {
 }
 
 type LetterSoupSolution struct {
-	LetterSoup
+	LetterSoupBase
 	FoundWords []FoundWord `json:"found_words"`
 }
 
@@ -79,7 +84,7 @@ func (lss LetterSoupSolution) NotFoundedWords() []string {
 	return notFound
 }
 
-func SolveLetterSoup(ls LetterSoup) (*LetterSoupSolution, error) {
+func SolveLetterSoup(ls LetterSoupBase) (*LetterSoupSolution, error) {
 	// Validate the letter soup
 	if errs := ls.Validate(); len(errs) > 0 {
 		return nil, fmt.Errorf("validation errors: %v", errs)
@@ -90,8 +95,8 @@ func SolveLetterSoup(ls LetterSoup) (*LetterSoupSolution, error) {
 	}
 
 	letterSoupSolution := LetterSoupSolution{
-		LetterSoup: ls,
-		FoundWords: []FoundWord{},
+		LetterSoupBase: ls,
+		FoundWords:     []FoundWord{},
 	}
 
 	transforms := domain_utils.MakeTransform("AllTransforms", matrix, false)

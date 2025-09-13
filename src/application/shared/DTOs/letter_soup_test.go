@@ -12,7 +12,7 @@ func TestLetterSoupValidate(t *testing.T) {
 
 	// Valid case
 	validLS := LetterSoupCreate{
-		LetterSoup: models.LetterSoup{
+		LetterSoupBase: models.LetterSoupBase{
 			Grid:  []string{"ABC", "DEF", "GHI"},
 			Words: []string{"ADG", "BEH", "CFI"},
 		},
@@ -22,7 +22,7 @@ func TestLetterSoupValidate(t *testing.T) {
 
 	// Grid Conversion case
 	convertLS := LetterSoupCreate{
-		LetterSoup: models.LetterSoup{
+		LetterSoupBase: models.LetterSoupBase{
 			Grid:  []string{"A,B,C,D,E,F,G,H,I"},
 			Words: []string{"ADG", "BEH", "CFI"},
 		},

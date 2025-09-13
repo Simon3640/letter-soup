@@ -8,7 +8,12 @@ import (
 )
 
 type LetterSoupCreate struct {
-	models.LetterSoup
+	models.LetterSoupBase
+}
+
+type LetterSoupCreateSolution struct {
+	FoundedWords    []string
+	NotFoundedWords []string
 }
 
 func (lsc *LetterSoupCreate) Validate() []string {
@@ -27,7 +32,7 @@ func (lsc *LetterSoupCreate) Validate() []string {
 		}
 	}
 
-	errs = append(errs, lsc.LetterSoup.Validate()...)
+	errs = append(errs, lsc.LetterSoupBase.Validate()...)
 	return errs
 }
 
@@ -40,7 +45,7 @@ type LetterSoupUpdate struct {
 func (lsu LetterSoupUpdate) Validate() []string {
 	var errs []string
 	if lsu.Grid != nil {
-		tempLS := models.LetterSoup{
+		tempLS := models.LetterSoupBase{
 			Grid:  *lsu.Grid,
 			Words: []string{},
 		}
@@ -50,4 +55,11 @@ func (lsu LetterSoupUpdate) Validate() []string {
 		errs = append(errs, "at least one word is required")
 	}
 	return errs
+}
+
+type LetterSoupUpdateSolution struct {
+	FoundedWords    []string
+	NotFoundedWords []string
+	Grid            *[]string
+	Words           *[]string
 }
