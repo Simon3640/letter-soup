@@ -40,6 +40,8 @@ func (uc *CreateLetterSoupUseCase) Execute(ctx context.Context,
 		return result
 	}
 
+	input.Validate()
+
 	var entity dtos.LetterSoupCreateSolution
 	entity.LetterSoupCreate = input
 
