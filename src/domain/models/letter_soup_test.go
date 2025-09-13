@@ -8,7 +8,7 @@ import (
 
 func TestSolveLetterSoup_BasicDirections(t *testing.T) {
 	assert := assert.New(t)
-	ls := LetterSoup{
+	ls := LetterSoupBase{
 		Grid: []string{
 			"ABCD",
 			"EFGH",
@@ -34,7 +34,7 @@ func TestSolveLetterSoup_BasicDirections(t *testing.T) {
 
 func TestSolveLetterSoup_Diagonals(t *testing.T) {
 	assert := assert.New(t)
-	ls := LetterSoup{
+	ls := LetterSoupBase{
 		Grid: []string{
 			"AXXX",
 			"XBXZ",
@@ -58,7 +58,7 @@ func TestSolveLetterSoup_Diagonals(t *testing.T) {
 
 func TestSolveLetterSoup_DiagonalReverse(t *testing.T) {
 	assert := assert.New(t)
-	ls := LetterSoup{
+	ls := LetterSoupBase{
 		Grid: []string{
 			"XXXA",
 			"XXBX",
@@ -83,7 +83,7 @@ func TestSolveLetterSoup_DiagonalReverse(t *testing.T) {
 
 func TestSolveLetterSoup_MultipleOccurrences(t *testing.T) {
 	assert := assert.New(t)
-	ls := LetterSoup{
+	ls := LetterSoupBase{
 		Grid: []string{
 			"TEST",
 			"ESTE",
@@ -101,7 +101,7 @@ func TestSolveLetterSoup_MultipleOccurrences(t *testing.T) {
 
 func TestSolveLetterSoup_NoWordsFound(t *testing.T) {
 	assert := assert.New(t)
-	ls := LetterSoup{
+	ls := LetterSoupBase{
 		Grid: []string{
 			"ABCD",
 			"EFGH",
